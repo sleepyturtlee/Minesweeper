@@ -1,8 +1,8 @@
 import de.bezier.guido.*;
 //Declare and initialize constants NUM_ROWS and NUM_COLS = 20
-public final static int NUM_ROWS = 10;
-public final static int NUM_COLS = 10;
-public final static int NUM_MINES = 3;
+public final static int NUM_ROWS = 25;
+public final static int NUM_COLS = 25;
+public final static int NUM_MINES = 100;
 private MSButton[][] buttons; //2d array of minesweeper buttons
 private ArrayList <MSButton> mines = new ArrayList <MSButton>(); //ArrayList of just the minesweeper buttons that are mined
 
@@ -56,7 +56,7 @@ public boolean isWon()
     return true;
 }
 public void displayLosingMessage(){
-     fill(0);
+    fill(255,0,0);
     textAlign(CENTER);
     textSize(50);
     text("Loser Loser Poopy Eater", 400,400);
@@ -64,7 +64,7 @@ public void displayLosingMessage(){
 }
 public void displayWinningMessage()
 {
-    fill(0);
+    fill(0,255,0);
     textAlign(CENTER);
     textSize(50);
     text("Winner Winner Chicken Dinner!", 400,400);
