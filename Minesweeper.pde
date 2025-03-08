@@ -1,3 +1,4 @@
+// IM TRYING TO DEBUG AHHH
 // if a comment has "DC" in it, it means "double check the code underneath if there
 // are errors"
 // i am currently: on step 13, else recusively call mousePressed with the valid, unclicked neighboring buttons in all 8 directions
@@ -165,28 +166,25 @@ public class MSButton
             }
           }       
         }
-        if(tryAgainScreen == true){
-            if(mouseX >= 175 && mouseX <= 425) {
-            if(mouseY >= 320 && mouseY <= 395) {
-              // restart
-              //System.out.println("Restart");
-              NUM_MINES = (int)(Math.random()*30) + 20;
-              for(int i = 0; i < mines.size(); i++) {
-                mines.remove(i);
-              }
-              setMines();
-              for(int r = 0; r < NUM_ROWS; r++) {
-                for(int c = 0; c < NUM_COLS; c++) {
-                  buttons[r][c].clicked = false;
-                  buttons[r][c].flagged = false;
-                  buttons[r][c].myLabel = "";
-                }
-              }
-               // code from setup
-              tryAgainScreen = false;
-          }
-        }    
-        }
+          //  if(mouseX >= 175 && mouseX <= 425) {
+          //  if(mouseY >= 320 && mouseY <= 395) {
+          //    // restart
+          //    //System.out.println("Restart");
+          //    NUM_MINES = (int)(Math.random()*30) + 20;
+          //    for(int i = 0; i < mines.size(); i++) {
+          //      mines.remove(i);
+          //    }
+          //    setMines();
+          //    for(int r = 0; r < NUM_ROWS; r++) {
+          //      for(int c = 0; c < NUM_COLS; c++) {
+          //        buttons[r][c].clicked = false;
+          //        buttons[r][c].flagged = false;
+          //        buttons[r][c].myLabel = "";
+          //      }
+          //    }
+          //     // code from setup
+          //    tryAgainScreen = false;
+        //}
     }
     public void draw () 
     {
@@ -205,35 +203,7 @@ public class MSButton
         stroke(0);
         textSize(10);
         text(myLabel,x+width/2,y+height/2);
-      
-      // display game over screen
-      if(tryAgainScreen == true) {
-      fill(255);
-      rect(100, 150, 400, 300);
-      fill(#ffb8f1);
-      rect(175, 320, 250, 75);
-      fill(0);
-      if(isWon() == false) {
-      textSize(30);
-      text("You lost !", 300, 250);
-      textSize(25);
-      text("Try again? ;(", 300, 355);
-      } else {
-      textSize(30);
-      text("You won !", 300, 250);
-      textSize(25);
-      text("Play again? ;)", 300, 355);
       }
-      //System.out.println("Try again screen:" + tryAgainScreen);
-      // mouse hover features
-      if(mouseX >= 175 && mouseX <= 425) {
-        if(mouseY >= 320 && mouseY <= 395) {
-           fill(hoverColor);
-           rect(175, 320, 250, 75);
-          }
-      }
-      }
-    }
     public void setLabel(String newLabel)
     {
         myLabel = newLabel;
