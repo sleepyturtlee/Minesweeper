@@ -147,7 +147,6 @@ public class MSButton
     {
         clicked = true;
         //your code here
-        if(tryAgainScreen == false) {
         if(mouseButton == RIGHT) {
           flagged = !(flagged);
           if(flagged == false) {
@@ -166,11 +165,11 @@ public class MSButton
             }
           }       
         }
-        } else {
+        if(tryAgainScreen == true){
             if(mouseX >= 175 && mouseX <= 425) {
             if(mouseY >= 320 && mouseY <= 395) {
               // restart
-              // System.out.println("Restart");
+              //System.out.println("Restart");
               NUM_MINES = (int)(Math.random()*30) + 20;
               for(int i = 0; i < mines.size(); i++) {
                 mines.remove(i);
@@ -180,7 +179,7 @@ public class MSButton
                 for(int c = 0; c < NUM_COLS; c++) {
                   buttons[r][c].clicked = false;
                   buttons[r][c].flagged = false;
-                  buttons[r][c].setLabel("");
+                  buttons[r][c].myLabel = "";
                 }
               }
                // code from setup
