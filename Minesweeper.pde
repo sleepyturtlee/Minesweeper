@@ -168,28 +168,28 @@ public class MSButton
             }
           }
         }  
-        //if(tryAgainScreen == true) {
-        //    if(mouseX >= 175 && mouseX <= 425) {
-        //    if(mouseY >= 320 && mouseY <= 395) {
-        //      // restart
-        //      //System.out.println("Restart");
-        //      NUM_MINES = (int)(Math.random()*30) + 20;
-        //      for(int i = 0; i < mines.size(); i++) {
-        //        mines.remove(i);
-        //      }
-        //      setMines();
-        //      for(int r = 0; r < NUM_ROWS; r++) {
-        //        for(int c = 0; c < NUM_COLS; c++) {
-        //          buttons[r][c].clicked = false;
-        //          buttons[r][c].flagged = false;
-        //          buttons[r][c].myLabel = "";
-        //        }
-        //      }
-        //       // code from setup
-        //      tryAgainScreen = false;
-        //  }
-        //}    
-        //}
+        if(tryAgainScreen == true) {
+            if(mouseX >= 175 && mouseX <= 425) {
+            if(mouseY >= 320 && mouseY <= 395) {
+              // restart
+              //System.out.println("Restart");
+              NUM_MINES = (int)(Math.random()*30) + 20;
+              for(int i = 0; i < mines.size(); i++) {
+                mines.remove(i);
+              }
+              setMines();
+              for(int r = 0; r < NUM_ROWS; r++) {
+                for(int c = 0; c < NUM_COLS; c++) {
+                  buttons[r][c].clicked = false;
+                  buttons[r][c].flagged = false;
+                  buttons[r][c].myLabel = "";
+                }
+              }
+               // code from setup
+              tryAgainScreen = false;
+          }
+        }    
+        }
     }
     public void draw () 
     {
