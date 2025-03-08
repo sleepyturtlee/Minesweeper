@@ -180,7 +180,7 @@ public class MSButton
                 for(int c = 0; c < NUM_COLS; c++) {
                   buttons[r][c].clicked = false;
                   buttons[r][c].flagged = false;
-                  buttons[r][c].myLabel = "";
+                  buttons[r][c].setLabel("");
                 }
               }
                // code from setup
