@@ -123,68 +123,51 @@ public class MSButton
         y = myRow*height;
         myLabel = "";
         flagged = clicked = false;
-        if(myRow % 2 ==0) {
-          if(myCol % 2 == 0) {
-            // pink #1
-            myColor = color(255, 163, 227);
-          } else {
-            // pink #2
-            myColor = color(255, 209, 238);
-          }
-        } else {
-            if(myCol % 2 == 0) {
-              // pink #2
-              myColor = color(255, 209, 238);
-          } else {
-            // pink #1
-            myColor = color(255, 163, 227);
-          }
-        }
+        //if(myRow % 2 ==0) {
+        //  if(myCol % 2 == 0) {
+        //    // pink #1
+        //    myColor = color(255, 163, 227);
+        //  } else {
+        //    // pink #2
+        //    myColor = color(255, 209, 238);
+        //  }
+        //} else {
+        //    if(myCol % 2 == 0) {
+        //      // pink #2
+        //      myColor = color(255, 209, 238);
+        //  } else {
+        //    // pink #1
+        //    myColor = color(255, 163, 227);
+        //  }
+        //}
         Interactive.add( this ); // register it with the manager
     }
 
     // called by manager
-    public void mousePressed () 
+     public void mousePressed () 
     {
         clicked = true;
-        //your code here
-        if(mouseButton == RIGHT) {
-          flagged = !(flagged);
-          if(flagged == false) {
-            clicked = false;
+        if(mouseButton == RIGHT){
+          flagged = !flagged;
+          if(flagged == false){
+            clicked = false;  
           }
-        } else if(mines.contains(this)) {
-          displayLosingMessage();
-        } else if(countMines(myRow, myCol) > 0) {
-          myLabel = Integer.toString(countMines(myRow, myCol));
-        } else {
-          for(int r = myRow-1; r <= myRow+1; r++) {
-            for(int c = myCol-1; c <= myCol+1; c++) {
-              if(isValid(r, c) == true && buttons[r][c].clicked == false) {
-                buttons[r][c].mousePressed();
-              }        
-            }
-          }       
         }
-          //  if(mouseX >= 175 && mouseX <= 425) {
-          //  if(mouseY >= 320 && mouseY <= 395) {
-          //    // restart
-          //    //System.out.println("Restart");
-          //    NUM_MINES = (int)(Math.random()*30) + 20;
-          //    for(int i = 0; i < mines.size(); i++) {
-          //      mines.remove(i);
-          //    }
-          //    setMines();
-          //    for(int r = 0; r < NUM_ROWS; r++) {
-          //      for(int c = 0; c < NUM_COLS; c++) {
-          //        buttons[r][c].clicked = false;
-          //        buttons[r][c].flagged = false;
-          //        buttons[r][c].myLabel = "";
-          //      }
-          //    }
-          //     // code from setup
-          //    tryAgainScreen = false;
-        //}
+        else if(mines.contains(this)){
+          displayLosingMessage();
+        }
+        else if(countMines(myRow,myCol) > 0){
+          setLabel(countMines(myRow, myCol));
+        }
+        else{
+          for(int i = myRow-1; i < myRow +2; i++){
+            for(int j = myCol- 1; j < myCol +2; j++){
+              if(isValid(i,j) && buttons[i][j].clicked == false){
+                buttons[i][j].mousePressed(); 
+              }
+            }
+          }
+        }  
     }
     public void draw () 
     {
