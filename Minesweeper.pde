@@ -170,7 +170,7 @@ public class MSButton
             if(mouseX >= 175 && mouseX <= 425) {
             if(mouseY >= 320 && mouseY <= 395) {
               // restart
-              System.out.println("Restart");
+              // System.out.println("Restart");
               NUM_MINES = (int)(Math.random()*30) + 20;
               for(int i = 0; i < mines.size(); i++) {
                 mines.remove(i);
