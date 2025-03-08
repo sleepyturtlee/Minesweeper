@@ -123,23 +123,23 @@ public class MSButton
         y = myRow*height;
         myLabel = "";
         flagged = clicked = false;
-        //if(myRow % 2 ==0) {
-        //  if(myCol % 2 == 0) {
-        //    // pink #1
-        //    myColor = color(255, 163, 227);
-        //  } else {
-        //    // pink #2
-        //    myColor = color(255, 209, 238);
-        //  }
-        //} else {
-        //    if(myCol % 2 == 0) {
-        //      // pink #2
-        //      myColor = color(255, 209, 238);
-        //  } else {
-        //    // pink #1
-        //    myColor = color(255, 163, 227);
-        //  }
-        //}
+        if(myRow % 2 ==0) {
+          if(myCol % 2 == 0) {
+            // pink #1
+            myColor = color(255, 163, 227);
+          } else {
+            // pink #2
+            myColor = color(255, 209, 238);
+          }
+        } else {
+            if(myCol % 2 == 0) {
+              // pink #2
+              myColor = color(255, 209, 238);
+          } else {
+            // pink #1
+            myColor = color(255, 163, 227);
+          }
+        }
         Interactive.add( this ); // register it with the manager
     }
 
